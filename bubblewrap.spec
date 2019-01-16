@@ -1,11 +1,11 @@
 Name: bubblewrap
 Summary: Core execution tool for unprivileged containers
 Group: Security
-Version: 0.1.7
+Version: 0.3.1
 Release: 1
 License: LGPLv2+
 URL: https://github.com/projectatomic/bubblewrap
-Source0: %{url}/releases/download/v%{version}/%{name}-%{version}.tar.xz
+Source0: https://github.com/projectatomic/bubblewrap/releases/download/v%{version}/%{name}-%{version}.tar.xz
 
 # We always run autogen.sh
 BuildRequires: autoconf
@@ -22,18 +22,16 @@ containers that works as a setuid binary on kernels without
 user namespaces.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 if ! test -x configure; then NOCONFIGURE=1 ./autogen.sh; fi
 %configure --disable-silent-rules --with-priv-mode=none
 
-%make
+%make_build
 
 %install
 %make_install INSTALL="install -p -c"
-
-find %{buildroot} -name '*.la' -delete -print
 
 %files
 %doc COPYING
