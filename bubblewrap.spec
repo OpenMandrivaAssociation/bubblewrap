@@ -22,13 +22,13 @@ containers that works as a setuid binary on kernels without
 user namespaces.
 
 %prep
-%setup -1
+%setup -q
 
 %build
 if ! test -x configure; then NOCONFIGURE=1 ./autogen.sh; fi
 %configure --disable-silent-rules --with-priv-mode=none
 
-%makE
+%make
 
 %install
 %makeinstall_std INSTALL="install -p -c"
