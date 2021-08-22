@@ -1,7 +1,7 @@
 Name:		bubblewrap
 Summary:	Core execution tool for unprivileged containers
 Group:		Security
-Version:	0.4.1
+Version:	0.5.0
 Release:	1
 License:	LGPLv2+
 URL:		https://github.com/projectatomic/bubblewrap
