@@ -35,5 +35,6 @@ if ! test -x configure; then NOCONFIGURE=1 ./autogen.sh; fi
 %files
 %doc COPYING
 %{_datadir}/bash-completion/completions/bwrap
+%{_datadir}/zsh/site-functions/_bwrap
 %{_bindir}/bwrap
 %{_mandir}/man1/*
