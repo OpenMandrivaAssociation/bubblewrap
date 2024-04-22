@@ -26,7 +26,8 @@ user namespaces.
 %autosetup -p1
 
 %build
-%meson
+%meson \
+        -Dselinux=disabled
 
 %meson_build
 
