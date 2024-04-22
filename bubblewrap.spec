@@ -6,16 +6,13 @@
 Name:		bubblewrap
 Summary:	Core execution tool for unprivileged containers
 Group:		Security
-Version:	0.8.0
-Release:	3
+Version:	0.9.0
+Release:	1
 License:	LGPLv2+
 URL:		https://github.com/projectatomic/bubblewrap
 Source0:	https://github.com/projectatomic/bubblewrap/releases/download/v%{version}/%{name}-%{version}.tar.xz
 
-# We always run autogen.sh
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	libtool
+BuildRequires:	meson
 BuildRequires:	pkgconfig(libcap)
 BuildRequires:	xsltproc
 BuildRequires:	docbook-style-xsl
@@ -29,13 +26,12 @@ user namespaces.
 %autosetup -p1
 
 %build
-if ! test -x configure; then NOCONFIGURE=1 ./autogen.sh; fi
-%configure --disable-silent-rules --with-priv-mode=none --disable-selinux
+%meson
 
-%make_build
+%meson_build
 
 %install
-%make_install INSTALL="install -p -c"
+%meson_install
 
 %files
 %doc COPYING
