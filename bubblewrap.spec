@@ -1,8 +1,3 @@
-%ifnarch %{riscv}
-# (tpg) optimize it a bit
-%global optflags %{optflags} -Oz --rtlib=compiler-rt
-%endif
-
 Name:		bubblewrap
 Summary:	Core execution tool for unprivileged containers
 Group:		Security
