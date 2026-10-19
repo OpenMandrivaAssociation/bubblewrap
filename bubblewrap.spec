@@ -1,11 +1,11 @@
 Name:		bubblewrap
 Summary:	Core execution tool for unprivileged containers
 Group:		Security
-Version:	0.11.2
+Version:	0.13.1
 Release:	1
 License:	LGPLv2+
-URL:		https://github.com/projectatomic/bubblewrap
-Source0:	https://github.com/projectatomic/bubblewrap/releases/download/v%{version}/%{name}-%{version}.tar.xz
+URL:		https://github.com/containers/bubblewrap
+Source0:	https://github.com/containers/bubblewrap/releases/download/v%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires:	meson
 BuildRequires:	pkgconfig(libcap)
